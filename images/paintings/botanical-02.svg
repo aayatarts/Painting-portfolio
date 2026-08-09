@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef1e6"/>
+      <stop offset="100%" stop-color="#d7ded0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg8)"/>
+  <line x1="400" y1="1000" x2="400" y2="380" stroke="#5f6c55" stroke-width="8"/>
+  <g fill="#c9a2c6">
+    <ellipse cx="330" cy="380" rx="55" ry="30" transform="rotate(-30 330 380)"/>
+    <ellipse cx="470" cy="380" rx="55" ry="30" transform="rotate(30 470 380)"/>
+    <ellipse cx="400" cy="330" rx="55" ry="30" transform="rotate(90 400 330)"/>
+    <ellipse cx="400" cy="430" rx="30" ry="18"/>
+  </g>
+  <g fill="#b98cb6">
+    <ellipse cx="280" cy="520" rx="50" ry="26" transform="rotate(-20 280 520)"/>
+    <ellipse cx="400" cy="480" rx="50" ry="26" transform="rotate(90 400 480)"/>
+    <ellipse cx="330" cy="480" rx="26" ry="16"/>
+  </g>
+  <ellipse cx="400" cy="330" rx="10" ry="10" fill="#e8d24a"/>
+  <ellipse cx="330" cy="480" rx="8" ry="8" fill="#e8d24a"/>
+  <text x="400" y="960" font-family="Georgia, serif" font-size="22" fill="#2b2b28" fill-opacity="0.45" text-anchor="middle">Wild Orchids — placeholder artwork</text>
+</svg>

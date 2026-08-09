@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg9" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2ddb0"/>
+      <stop offset="100%" stop-color="#c76b3c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg9)"/>
+  <g fill="#8a3f2c">
+    <path d="M400,300 C460,360 470,440 400,520 C330,440 340,360 400,300 Z"/>
+  </g>
+  <g fill="#b5473d">
+    <path d="M280,480 C340,520 360,600 300,660 C240,600 240,520 280,480 Z"/>
+    <path d="M520,480 C580,520 600,600 540,660 C480,600 480,520 520,480 Z"/>
+  </g>
+  <g fill="#d98c3f">
+    <path d="M400,600 C460,650 470,730 400,800 C330,730 340,650 400,600 Z"/>
+  </g>
+  <text x="400" y="960" font-family="Georgia, serif" font-size="22" fill="#3d1f14" fill-opacity="0.6" text-anchor="middle">Autumn Leaves — placeholder artwork</text>
+</svg>

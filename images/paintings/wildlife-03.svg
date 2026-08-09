@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d4a34"/>
+      <stop offset="100%" stop-color="#1f261a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg6)"/>
+  <g opacity="0.5" stroke="#0f130c" stroke-width="10">
+    <line x1="80" y1="1000" x2="80" y2="300"/>
+    <line x1="220" y1="1000" x2="220" y2="200"/>
+    <line x1="600" y1="1000" x2="600" y2="260"/>
+    <line x1="720" y1="1000" x2="720" y2="180"/>
+  </g>
+  <ellipse cx="400" cy="700" rx="140" ry="90" fill="#8a7047"/>
+  <ellipse cx="330" cy="640" rx="50" ry="40" fill="#8a7047"/>
+  <path d="M310,610 L280,540 L300,600 Z" fill="#8a7047"/>
+  <path d="M300,600 L250,500 L290,590 Z" fill="#c9c2a8"/>
+  <path d="M320,600 L290,510 L330,585 Z" fill="#c9c2a8"/>
+  <line x1="360" y1="770" x2="360" y2="850" stroke="#8a7047" stroke-width="10"/>
+  <line x1="440" y1="770" x2="440" y2="850" stroke="#8a7047" stroke-width="10"/>
+  <text x="400" y="960" font-family="Georgia, serif" font-size="22" fill="#ffffff" fill-opacity="0.55" text-anchor="middle">Stag in the Clearing — placeholder artwork</text>
+</svg>

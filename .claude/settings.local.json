@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python --version)",
+      "PowerShell(py --version 2>$null)",
+      "PowerShell(node --version 2>$null)",
+      "PowerShell(if \\($?\\) { \"node ok\" } else { \"no node\" })",
+      "PowerShell(Receive-Job -Job $job -Keep 2>&1)"
+    ]
+  }
+}

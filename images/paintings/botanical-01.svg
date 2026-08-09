@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4e9e2"/>
+      <stop offset="100%" stop-color="#e6cfc6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg7)"/>
+  <g fill="#d98fa0">
+    <circle cx="400" cy="480" r="140"/>
+    <circle cx="300" cy="440" r="110"/>
+    <circle cx="500" cy="440" r="110"/>
+    <circle cx="330" cy="560" r="110"/>
+    <circle cx="470" cy="560" r="110"/>
+  </g>
+  <circle cx="400" cy="490" r="70" fill="#c76b8a"/>
+  <path d="M400,630 L400,900" stroke="#5f6c55" stroke-width="10"/>
+  <path d="M400,760 C440,740 470,700 460,660" stroke="#5f6c55" stroke-width="8" fill="none"/>
+  <path d="M400,820 C360,800 330,760 340,720" stroke="#5f6c55" stroke-width="8" fill="none"/>
+  <text x="400" y="960" font-family="Georgia, serif" font-size="22" fill="#2b2b28" fill-opacity="0.45" text-anchor="middle">Peony Study — placeholder artwork</text>
+</svg>

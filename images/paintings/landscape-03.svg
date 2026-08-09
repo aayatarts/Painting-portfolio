@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a9c4d4"/>
+      <stop offset="55%" stop-color="#6f95ab"/>
+      <stop offset="100%" stop-color="#3f5566"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#sky3)"/>
+  <path d="M0,600 L120,500 L220,600 L340,460 L460,600 L600,520 L800,620 L800,1000 L0,1000 Z" fill="#4a4238"/>
+  <path d="M0,700 C220,660 340,720 480,690 C620,660 700,700 800,680 L800,1000 L0,1000 Z" fill="#2c4a5c" opacity="0.9"/>
+  <text x="400" y="960" font-family="Georgia, serif" font-size="22" fill="#ffffff" fill-opacity="0.55" text-anchor="middle">Coastal Cliffs — placeholder artwork</text>
+</svg>

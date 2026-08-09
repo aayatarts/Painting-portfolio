@@ -1,0 +1,23 @@
+{
+  "name": "Jane Alder",
+  "tagline": "Nature Rendered in Oil — Original Paintings by Jane Alder",
+  "intro": "I paint the quiet details of the natural world — misted valleys, watchful wildlife, and the delicate structure of a single bloom — in photorealistic oil and watercolor. Each piece begins with hours spent observing light before a single brushstroke is made.",
+  "heroImage": "images/paintings/landscape-01.svg",
+  "artistPhoto": "images/artist-photo.svg",
+  "bio": [
+    "I paint to slow down and pay attention — to the way light moves across a hillside, the alertness in a wild animal's eyes, the structure hidden inside a single petal.",
+    "My journey into painting began over fifteen years ago, sketching birds in the garden of my childhood home. What started as a way to notice the world more closely grew into a full-time practice in oil and watercolor, focused entirely on the landscapes, animals and plants I encounter on long walks near my studio.",
+    "Each painting can take anywhere from two weeks to several months, built up in thin layers to capture the realism I look for — the texture of fur, the translucence of a leaf held up to the sun, the haze of distance in a valley. My goal is always the same: to make you feel like you could step into the scene.",
+    "Today my work is held in private collections across North America, Europe and Asia, and I continue to paint from my studio, taking on select commissions each year."
+  ],
+  "achievements": [
+    { "title": "2024 — Solo Exhibition, \"Quiet Wild\"", "detail": "Green Hollow Gallery, Portland, OR" },
+    { "title": "2023 — Juried Group Show, Nature in Focus", "detail": "Riverside Art Center" },
+    { "title": "2022 — Featured Artist", "detail": "Wildlife Art Quarterly, Issue 14" },
+    { "title": "2021 — Emerging Artist Award", "detail": "National Botanical Art Society" }
+  ],
+  "email": "hello@janealder.com",
+  "whatsapp": "10000000000",
+  "instagram": "janealder.art",
+  "formspreeEndpoint": "https://formspree.io/f/yourFormID"
+}

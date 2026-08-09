@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gallery | Jane Alder</title>
+  <meta name="description" content="Browse the full collection of original nature, wildlife and botanical paintings by Jane Alder.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gallery | Jane Alder">
+  <meta property="og:description" content="Browse the full collection of original nature, wildlife and botanical paintings by Jane Alder.">
+  <meta property="og:image" content="images/paintings/wildlife-01.svg">
+  <meta property="og:url" content="https://yourusername.github.io/paintings-portfolio/gallery.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo" id="site-name">Jane Alder</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>Original paintings across landscapes, wildlife and botanical studies. Click any piece to view it in detail.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="landscape">Landscapes</button>
+          <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+          <button class="filter-btn" data-filter="botanical">Botanical</button>
+        </div>
+
+        <div class="grid" id="gallery-grid">
+          <!-- Populated automatically by js/script.js from data/paintings.csv -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox modal: shared by every painting in the grid above -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous painting">&#8249;</button>
+      <button class="lightbox-next" aria-label="Next painting">&#8250;</button>
+      <div class="lightbox-image-wrap">
+        <img src="" alt="">
+      </div>
+      <div class="lightbox-caption">
+        <h3></h3>
+        <p class="art-meta"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a data-contact="email" href="mailto:hello@janealder.com" aria-label="Email">&#9993;</a>
+        <a data-contact="whatsapp" href="https://wa.me/10000000000" target="_blank" rel="noopener" aria-label="WhatsApp">&#9742;</a>
+        <a data-contact="instagram" href="https://instagram.com/janealder.art" target="_blank" rel="noopener" aria-label="Instagram">&#9737;</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> <span id="footer-artist-name">Jane Alder</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cdd8d2"/>
+      <stop offset="60%" stop-color="#a9b8ae"/>
+      <stop offset="100%" stop-color="#7c8b6f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#sky2)"/>
+  <ellipse cx="400" cy="560" rx="500" ry="120" fill="#e8ede8" opacity="0.5"/>
+  <path d="M0,640 C160,580 300,660 420,600 C580,540 680,620 800,580 L800,1000 L0,1000 Z" fill="#5f6c55" opacity="0.85"/>
+  <path d="M0,760 C200,700 340,760 480,720 C620,690 700,750 800,710 L800,1000 L0,1000 Z" fill="#3d4634"/>
+  <text x="400" y="960" font-family="Georgia, serif" font-size="22" fill="#2b2b28" fill-opacity="0.45" text-anchor="middle">Misty Highlands — placeholder artwork</text>
+</svg>

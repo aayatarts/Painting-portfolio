@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Jane Alder</title>
+  <meta name="description" content="Get in touch with Jane Alder about original paintings, commissions, or gallery inquiries.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact | Jane Alder">
+  <meta property="og:description" content="Get in touch with Jane Alder about original paintings, commissions, or gallery inquiries.">
+  <meta property="og:image" content="images/paintings/botanical-01.svg">
+  <meta property="og:url" content="https://yourusername.github.io/paintings-portfolio/contact.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo" id="site-name">Jane Alder</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Get in Touch</h1>
+        <p>Interested in a piece, a commission, or representing this work in your gallery? I'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container contact-grid">
+
+        <div class="contact-info-list">
+          <!-- Fallback contact details below — real values come from data/artist.json -->
+          <a class="contact-info-item" data-contact="email" href="mailto:hello@janealder.com">
+            <span class="contact-icon">&#9993;</span>
+            <span>
+              <span class="label">Email</span><br>
+              <span class="value" id="contact-email-value">hello@janealder.com</span>
+            </span>
+          </a>
+
+          <a class="contact-info-item" data-contact="whatsapp" href="https://wa.me/10000000000" target="_blank" rel="noopener">
+            <span class="contact-icon">&#9742;</span>
+            <span>
+              <span class="label">WhatsApp</span><br>
+              <span class="value">Click to chat</span>
+            </span>
+          </a>
+
+          <a class="contact-info-item" data-contact="instagram" href="https://instagram.com/janealder.art" target="_blank" rel="noopener">
+            <span class="contact-icon">&#9737;</span>
+            <span>
+              <span class="label">Instagram</span><br>
+              <span class="value" id="contact-instagram-value">@janealder.art</span>
+            </span>
+          </a>
+        </div>
+
+        <!--
+          Fallback form action below — the real endpoint comes from
+          "formspreeEndpoint" in data/artist.json. Sign up free at
+          https://formspree.io, create a form, and paste the URL it gives you
+          (looks like https://formspree.io/f/xxxxxxx) into that file.
+        -->
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <span class="form-error"></span>
+          </div>
+
+          <button type="submit" class="btn btn-solid">Send Message</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a data-contact="email" href="mailto:hello@janealder.com" aria-label="Email">&#9993;</a>
+        <a data-contact="whatsapp" href="https://wa.me/10000000000" target="_blank" rel="noopener" aria-label="WhatsApp">&#9742;</a>
+        <a data-contact="instagram" href="https://instagram.com/janealder.art" target="_blank" rel="noopener" aria-label="Instagram">&#9737;</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> <span id="footer-artist-name">Jane Alder</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
