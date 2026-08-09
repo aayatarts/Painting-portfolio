@@ -1,6 +1,6 @@
 {
-  "name": "Jane Alder",
-  "tagline": "Nature Rendered in Oil — Original Paintings by Jane Alder",
+  "name": "Aayat Arts",
+  "tagline": "Nature Rendered in Oil — Original Paintings by Aayat Arts",
   "intro": "I paint the quiet details of the natural world — misted valleys, watchful wildlife, and the delicate structure of a single bloom — in photorealistic oil and watercolor. Each piece begins with hours spent observing light before a single brushstroke is made.",
   "heroImage": "images/paintings/day-and-night-tree.jpg",
   "artistPhoto": "images/artist-photo.svg",
@@ -16,8 +16,8 @@
     { "title": "2022 — Featured Artist", "detail": "Wildlife Art Quarterly, Issue 14" },
     { "title": "2021 — Emerging Artist Award", "detail": "National Botanical Art Society" }
   ],
-  "email": "hello@janealder.com",
+  "email": "aayat.arts24@gmail.com",
   "whatsapp": "10000000000",
-  "instagram": "janealder.art",
+  "instagram": "https://www.instagram.com/aayat_yasmin24/",
   "formspreeEndpoint": "https://formspree.io/f/yourFormID"
 }
