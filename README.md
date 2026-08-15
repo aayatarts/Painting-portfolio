@@ -47,30 +47,19 @@ Excel or Google Sheets. Each row is one painting. Columns:
 | Image | The image file name (see below) | `landscape-01.svg` |
 | Alt Text | A short description, for accessibility & search engines | `Golden valley at sunset with rolling hills` |
 | Featured | `TRUE` to also show it on the Home page, otherwise `FALSE` | `TRUE` |
-| For Sale | `1` to show this painting on the site at all, otherwise leave blank or `0` | `1` |
 | Additional Images | Extra photos of the *same* painting (different angles, close-ups, in a frame, etc.) | `angle-2.jpg\|close-up.jpg` |
 
 **To add a new painting:** put the image file in the `images/paintings/` folder,
 then add a new row to the CSV with its details and the exact file name in the
 `Image` column. That's it — it will automatically appear in the gallery (and on
-the home page if `Featured` is `TRUE`).
+the home page if `Featured` is `TRUE`). Every row in the file shows up on the
+site — there's no separate on/off switch, so only add a row once you're ready
+for people to see it.
 
 **To mark a piece as sold:** just change its `Status` cell to `Sold` and save.
-(This still shows the painting with a "Sold" badge — it's for pieces you want
-people to see but can no longer buy.)
-
-**To hide a piece from the site entirely:** set its `For Sale` cell to `0` or
-leave it blank, **and** make sure `Status` is not `Sold`. A piece with
-`For Sale` set to `0` disappears from the gallery and home page completely, as
-if it were never added to the file. **Important:** if you add a new row and
-forget to fill in `For Sale`, that painting will not show up on the site — set
-it to `1` for anything you want visitors to see.
-
-**Exception — Sold pieces always show:** if `Status` is `Sold`, the painting
-appears on the site with a "Sold" badge even if `For Sale` is `0` or blank.
-The idea is that `For Sale` only hides pieces you're not ready to reveal yet
-(drafts, upcoming work) — once something is sold, people should still be able
-to see it in the gallery, just not buy it.
+The painting still shows in the gallery, just with a "Sold" badge instead of
+"Available" — that's the intended way to keep sold work visible for people to
+browse without implying it can still be bought.
 
 **To show more photos of one painting (e.g. a close-up or a different angle):**
 put the extra image file(s) in `images/paintings/` like normal, then list their

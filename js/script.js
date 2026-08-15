@@ -51,8 +51,7 @@ async function loadPaintings() {
     const text = await response.text();
     return parseCSV(text)
       .filter((row) => row.title)
-      .map((row, index) => normalizePainting(row, index))
-      .filter((painting) => painting.forSale || painting.status === 'sold');
+      .map((row, index) => normalizePainting(row, index));
   } catch (err) {
     console.warn('Could not load data/paintings.csv. See README.md for local preview instructions.', err);
     showDataError('featured-grid');
@@ -65,7 +64,6 @@ function normalizePainting(row, index) {
   const category = (row.category || '').toLowerCase().trim();
   const status = (row.status || 'available').toLowerCase().trim();
   const featuredRaw = (row.featured || '').toLowerCase().trim();
-  const forSaleRaw = (row.forsale || '').toLowerCase().trim();
   let image = (row.image || '').trim();
   if (image && !image.includes('/')) image = `images/paintings/${image}`;
 
@@ -87,8 +85,7 @@ function normalizePainting(row, index) {
     src: image,
     images: [image, ...extraImages].filter(Boolean),
     alt: row.alttext || row.alt || row.title,
-    featured: ['true', 'yes', '1'].includes(featuredRaw),
-    forSale: ['true', 'yes', '1'].includes(forSaleRaw)
+    featured: ['true', 'yes', '1'].includes(featuredRaw)
   };
 }
 
