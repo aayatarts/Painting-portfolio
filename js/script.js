@@ -51,7 +51,8 @@ async function loadPaintings() {
     const text = await response.text();
     return parseCSV(text)
       .filter((row) => row.title)
-      .map((row, index) => normalizePainting(row, index));
+      .map((row, index) => normalizePainting(row, index))
+      .filter((painting) => painting.forSale || painting.status === 'sold');
   } catch (err) {
     console.warn('Could not load data/paintings.csv. See README.md for local preview instructions.', err);
     showDataError('featured-grid');
@@ -64,8 +65,16 @@ function normalizePainting(row, index) {
   const category = (row.category || '').toLowerCase().trim();
   const status = (row.status || 'available').toLowerCase().trim();
   const featuredRaw = (row.featured || '').toLowerCase().trim();
+  const forSaleRaw = (row.forsale || '').toLowerCase().trim();
   let image = (row.image || '').trim();
   if (image && !image.includes('/')) image = `images/paintings/${image}`;
+
+  const resolveImagePath = (name) => (name.includes('/') ? name : `images/paintings/${name}`);
+  const extraImages = (row.additionalimages || '')
+    .split('|')
+    .map((name) => name.trim())
+    .filter(Boolean)
+    .map(resolveImagePath);
 
   return {
     id: `${slugify(row.title)}-${index}`,
@@ -76,8 +85,10 @@ function normalizePainting(row, index) {
     year: row.year || '',
     status: ['available', 'inquire', 'sold'].includes(status) ? status : 'available',
     src: image,
+    images: [image, ...extraImages].filter(Boolean),
     alt: row.alttext || row.alt || row.title,
-    featured: ['true', 'yes', '1'].includes(featuredRaw)
+    featured: ['true', 'yes', '1'].includes(featuredRaw),
+    forSale: ['true', 'yes', '1'].includes(forSaleRaw)
   };
 }
 
@@ -275,6 +286,7 @@ function initGallery() {
   let activeFilter = 'all';
   let currentList = PAINTINGS.slice();
   let currentIndex = 0;
+  let currentImageIndex = 0;
 
   const filterButtons = document.querySelectorAll('.filter-btn');
 
@@ -312,6 +324,7 @@ function initGallery() {
   if (!lightbox) return;
 
   const lightboxImg = lightbox.querySelector('.lightbox-image-wrap img');
+  const thumbsContainer = lightbox.querySelector('.lightbox-thumbs');
   const captionTitle = lightbox.querySelector('.lightbox-caption h3');
   const captionMeta = lightbox.querySelector('.lightbox-caption .art-meta');
   const closeBtn = lightbox.querySelector('.lightbox-close');
@@ -320,6 +333,7 @@ function initGallery() {
 
   function openLightbox(index) {
     currentIndex = index;
+    currentImageIndex = 0;
     updateLightbox();
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -333,20 +347,52 @@ function initGallery() {
   function updateLightbox() {
     const painting = currentList[currentIndex];
     if (!painting) return;
-    lightboxImg.src = painting.src;
-    lightboxImg.alt = painting.alt;
+    renderThumbs(painting);
+    showImage(painting, currentImageIndex);
     captionTitle.textContent = painting.title;
     captionMeta.textContent =
       `${painting.medium} · ${painting.dimensions} · ${painting.year} · ${capitalize(painting.status)}`;
   }
 
+  function showImage(painting, imageIndex) {
+    currentImageIndex = imageIndex;
+    const images = painting.images && painting.images.length ? painting.images : [painting.src];
+    lightboxImg.src = images[imageIndex] || images[0];
+    lightboxImg.alt = painting.alt;
+    thumbsContainer.querySelectorAll('.lightbox-thumb').forEach((thumb, i) => {
+      thumb.classList.toggle('active', i === imageIndex);
+    });
+  }
+
+  function renderThumbs(painting) {
+    const images = painting.images && painting.images.length ? painting.images : [painting.src];
+    if (images.length <= 1) {
+      thumbsContainer.innerHTML = '';
+      return;
+    }
+    thumbsContainer.innerHTML = images
+      .map((src, i) => `
+        <button class="lightbox-thumb" type="button" data-index="${i}" aria-label="View photo ${i + 1} of ${images.length}">
+          <img src="${src}" alt="" loading="lazy">
+        </button>
+      `)
+      .join('');
+    thumbsContainer.querySelectorAll('.lightbox-thumb').forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        showImage(painting, Number(thumb.getAttribute('data-index')));
+      });
+    });
+  }
+
   function showNext() {
     currentIndex = (currentIndex + 1) % currentList.length;
+    currentImageIndex = 0;
     updateLightbox();
   }
 
   function showPrev() {
     currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
+    currentImageIndex = 0;
     updateLightbox();
   }
 

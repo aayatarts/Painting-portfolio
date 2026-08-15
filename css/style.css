@@ -408,11 +408,12 @@ input, textarea {
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+  overflow-y: auto;
 }
 
 .lightbox-image-wrap {
   width: 100%;
-  max-height: 68vh;
+  max-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -420,10 +421,50 @@ input, textarea {
 
 .lightbox-image-wrap img {
   max-width: 100%;
-  max-height: 68vh;
+  max-height: 60vh;
   width: auto;
   object-fit: contain;
   border-radius: var(--radius);
+}
+
+.lightbox-thumbs {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 0.1rem;
+}
+
+.lightbox-thumbs:empty {
+  display: none;
+}
+
+.lightbox-thumb {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  padding: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid transparent;
+  opacity: 0.6;
+  transition: opacity var(--transition), border-color var(--transition);
+}
+
+.lightbox-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lightbox-thumb:hover {
+  opacity: 0.9;
+}
+
+.lightbox-thumb.active {
+  opacity: 1;
+  border-color: var(--color-white);
 }
 
 .lightbox-caption {
