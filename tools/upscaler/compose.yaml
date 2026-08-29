@@ -1,0 +1,11 @@
+services:
+  image-upscaler:
+    build: .
+    volumes:
+      - ../../images/paintings:/data/input:ro
+      - ../../images/paintings-upscaled:/data/output
+    environment:
+      - MIN_WIDTH=1500
+      - MIN_HEIGHT=1200
+      - MAX_SIZE_MB=50
+ 
