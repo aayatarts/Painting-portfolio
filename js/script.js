@@ -32,8 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (paintings) {
     PAINTINGS = paintings;
-    initFeaturedGrid();
-    initGallery();
+    const lightbox = createLightbox();
+    initFeaturedGrid(lightbox);
+    initGallery(lightbox);
   }
 
   if (artist) {
@@ -265,25 +266,32 @@ function initFooterYear() {
 /* --------------------------------------------------------------------
    Home: Featured Works
    -------------------------------------------------------------------- */
-function initFeaturedGrid() {
+function initFeaturedGrid(lightbox) {
   const grid = document.getElementById('featured-grid');
   if (!grid) return;
 
   const featured = PAINTINGS.filter((p) => p.featured);
   grid.innerHTML = featured.map((p) => renderCard(p)).join('');
+
+  if (!lightbox) return;
+  grid.querySelectorAll('.art-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const id = card.getAttribute('data-id');
+      const index = featured.findIndex((p) => p.id === id);
+      lightbox.open(featured, index);
+    });
+  });
 }
 
 /* --------------------------------------------------------------------
-   Gallery + Lightbox
+   Gallery
    -------------------------------------------------------------------- */
-function initGallery() {
+function initGallery(lightbox) {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
 
   let activeFilter = 'all';
   let currentList = PAINTINGS.slice();
-  let currentIndex = 0;
-  let currentImageIndex = 0;
 
   const filterButtons = document.querySelectorAll('.filter-btn');
 
@@ -296,11 +304,12 @@ function initGallery() {
   }
 
   function attachCardClicks() {
+    if (!lightbox) return;
     grid.querySelectorAll('.art-card').forEach((card) => {
       card.addEventListener('click', () => {
         const id = card.getAttribute('data-id');
         const index = currentList.findIndex((p) => p.id === id);
-        openLightbox(index);
+        lightbox.open(currentList, index);
       });
     });
   }
@@ -315,10 +324,17 @@ function initGallery() {
   });
 
   renderGrid();
+}
 
-  /* ----- Lightbox ----- */
+/* --------------------------------------------------------------------
+   Lightbox — shared by the Home "Featured Works" grid and the full Gallery.
+   Each grid opens it with its own list of paintings, so Next/Prev cycles
+   through whichever list (featured, or the current gallery filter) the
+   visitor opened it from.
+   -------------------------------------------------------------------- */
+function createLightbox() {
   const lightbox = document.getElementById('lightbox');
-  if (!lightbox) return;
+  if (!lightbox) return null;
 
   const lightboxImg = lightbox.querySelector('.lightbox-image-wrap img');
   const thumbsContainer = lightbox.querySelector('.lightbox-thumbs');
@@ -328,7 +344,12 @@ function initGallery() {
   const prevBtn = lightbox.querySelector('.lightbox-prev');
   const nextBtn = lightbox.querySelector('.lightbox-next');
 
-  function openLightbox(index) {
+  let currentList = [];
+  let currentIndex = 0;
+  let currentImageIndex = 0;
+
+  function open(list, index) {
+    currentList = list;
     currentIndex = index;
     currentImageIndex = 0;
     updateLightbox();
@@ -420,6 +441,8 @@ function initGallery() {
       delta > 0 ? showPrev() : showNext();
     }
   });
+
+  return { open };
 }
 
 function renderCard(p) {

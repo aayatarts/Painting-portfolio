@@ -23,6 +23,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "23faac5cbb794c8eb4cd1b286bbd87d9"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 
@@ -78,6 +82,23 @@
       </div>
     </section>
   </main>
+
+  <!-- Lightbox modal: shared by every painting in the grid above -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous painting">&#8249;</button>
+      <button class="lightbox-next" aria-label="Next painting">&#8250;</button>
+      <div class="lightbox-image-wrap">
+        <img src="" alt="">
+      </div>
+      <div class="lightbox-thumbs"></div>
+      <div class="lightbox-caption">
+        <h3></h3>
+        <p class="art-meta"></p>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
