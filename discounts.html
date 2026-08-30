@@ -4,19 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- REPLACE: page title & description shown in search engines and browser tabs -->
-  <title>Aayat Arts | Paintings</title>
-  <meta name="description" content="Original nature, wildlife and botanical paintings by Aayat Arts. Photorealistic acrylic and watercolor works available for collectors and galleries worldwide.">
+  <title>Discounts | Aayat Arts</title>
+  <meta name="description" content="Original paintings by Aayat Arts currently offered at a special discounted price.">
 
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
-  <!-- Open Graph tags: control how the site looks when shared on social apps -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Aayat Arts | Paintings">
-  <meta property="og:description" content="Original nature, wildlife and botanical paintings by Aayat Arts — photorealistic works for collectors and galleries.">
-  <meta property="og:image" content="images/paintings/landscape-01.svg">
-  <!-- REPLACE: og:url with your live site URL once deployed -->
-  <meta property="og:url" content="https://yourusername.github.io/paintings-portfolio/">
+  <meta property="og:title" content="Discounts | Aayat Arts">
+  <meta property="og:description" content="Original paintings by Aayat Arts currently offered at a special discounted price.">
+  <meta property="og:image" content="images/paintings/wildlife-01.svg">
+  <meta property="og:url" content="https://yourusername.github.io/paintings-portfolio/discounts.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,15 +29,14 @@
 
   <header class="site-header">
     <nav class="navbar">
-      <!-- Fallback text only — real value comes from "name" in data/artist.json -->
       <a href="index.html" class="nav-logo" id="site-name">Jane Alder</a>
       <button class="nav-toggle" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="discounts.html">Discounts</a></li>
+        <li><a href="discounts.html" class="active">Discounts</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -48,37 +44,17 @@
   </header>
 
   <main>
-    <!-- Hero: image/name/tagline below are fallback text, overridden by data/artist.json -->
-    <section class="hero">
-      <img id="hero-bg" src="images/paintings/landscape-01.svg" alt="Featured painting: Golden Valley at Dusk" class="hero-bg">
-      <div class="hero-content">
-        <h1 id="hero-name">Jane Alder</h1>
-        <p id="hero-tagline">Nature Rendered in Oil &mdash; Original Paintings by Jane Alder</p>
-        <a href="gallery.html" class="btn">View the Gallery</a>
-      </div>
-    </section>
-
-    <!-- Introduction: fallback text, overridden by "intro" in data/artist.json -->
-    <section class="section">
-      <div class="container intro">
-        <p id="home-intro">
-          I paint the quiet details of the natural world &mdash; misted valleys, watchful wildlife,
-          and the delicate structure of a single bloom &mdash; in photorealistic oil and watercolor.
-          Each piece begins with hours spent observing light before a single brushstroke is made.
-        </p>
-      </div>
-    </section>
-
-    <!-- Featured Works -->
-    <section class="section section-alt">
+    <section class="page-header">
       <div class="container">
-        <h2 class="section-title">Featured Works</h2>
-        <p class="section-subtitle">A selection of recent paintings. Browse the full collection in the gallery.</p>
-        <div class="grid" id="featured-grid">
-          <!-- Populated automatically by js/script.js from data/paintings.csv -->
-        </div>
-        <div class="view-all-wrap">
-          <a href="gallery.html" class="btn btn-solid">View Full Gallery</a>
+        <h1>Discounts</h1>
+        <p>Original paintings currently offered at a special price. Click any piece to view it in detail.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="grid" id="discounts-grid">
+          <!-- Populated automatically by js/script.js from data/paintings.csv (Discount / Discount % columns) -->
         </div>
       </div>
     </section>
@@ -104,7 +80,6 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-social">
-        <!-- Fallback hrefs — real values come from data/artist.json (email/whatsapp/instagram) -->
         <a data-contact="email" href="mailto:hello@janealder.com" aria-label="Email">&#9993;</a>
         <a data-contact="whatsapp" href="https://wa.me/10000000000" target="_blank" rel="noopener" aria-label="WhatsApp">&#9742;</a>
         <a data-contact="instagram" href="https://instagram.com/janealder.art" target="_blank" rel="noopener" aria-label="Instagram">&#9737;</a>

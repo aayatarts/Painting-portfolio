@@ -14,10 +14,11 @@ opening the HTML, CSS or JS files.**
 /
 ├── index.html               Home page (hero + featured works)
 ├── gallery.html              Full gallery with category filters + lightbox
+├── discounts.html             Paintings currently on sale
 ├── about.html                 Artist bio / statement / exhibitions
 ├── contact.html                Contact info + Formspree contact form
 ├── data/
-│   ├── paintings.csv         ★ Edit this to add/update/remove paintings
+│   ├── paintings.csv         ★ Edit this to add/update/remove paintings, or put one on sale
 │   └── artist.json           ★ Edit this to update the artist's bio & contact info
 ├── css/style.css            All styling (colors/fonts are CSS variables at the top)
 ├── js/script.js             Loads data/ files and renders the site (no editing needed)
@@ -48,6 +49,8 @@ Excel or Google Sheets. Each row is one painting. Columns:
 | Alt Text | A short description, for accessibility & search engines | `Golden valley at sunset with rolling hills` |
 | Featured | `TRUE` to also show it on the Home page, otherwise `FALSE` | `TRUE` |
 | Additional Images | Extra photos of the *same* painting (different angles, close-ups, in a frame, etc.) | `angle-2.jpg\|close-up.jpg` |
+| Discount | `TRUE` to put the painting on sale (shows a badge and adds it to the Discounts page), otherwise `FALSE` | `TRUE` |
+| Discount % | The percentage off, just the number, no `%` sign. Leave blank if Discount is `FALSE` | `20` |
 
 **To add a new painting:** put the image file in the `images/paintings/` folder,
 then add a new row to the CSV with its details and the exact file name in the
@@ -70,6 +73,16 @@ appear underneath the main photo so they can click through the extra angles.
 Leave this cell blank if a painting only has one photo — nothing extra will
 show up. This is separate from the main `Image` column, which is still the
 photo shown first and in the gallery grid.
+
+**To put a painting on sale:** set its `Discount` cell to `TRUE` and its
+`Discount %` cell to the percentage off (just the number, e.g. `20`). It will
+automatically get a "% Off" badge on its card and appear on the new
+**Discounts** page (linked in the nav bar). No price is shown anywhere — just
+the percentage.
+
+**To end a sale:** set `Discount` back to `FALSE` (and optionally clear
+`Discount %`) — it disappears from the Discounts page and loses its badge
+everywhere else.
 
 **Tips:**
 - Don't change the column headers in row 1.

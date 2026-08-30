@@ -2,11 +2,11 @@
    Artist Portfolio — Site Script
    Vanilla JS only. All editable content lives OUTSIDE this file:
 
-     data/paintings.csv   → the painting inventory (title, medium, status...)
+     data/paintings.csv   → the painting inventory (title, medium, status, discount...)
      data/artist.json     → artist name, bio, achievements, contact details
 
-   Edit those two files to update the site — you never need to touch this
-   one. See README.md for a full guide.
+   Edit those files to update the site — you never need to touch this one.
+   See README.md for a full guide.
 
    IMPORTANT: browsers block a plain double-clicked HTML file from reading
    local data files (a security restriction on the file:// protocol). To
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const lightbox = createLightbox();
     initFeaturedGrid(lightbox);
     initGallery(lightbox);
+    initDiscountsGrid(lightbox);
   }
 
   if (artist) {
@@ -75,6 +76,10 @@ function normalizePainting(row, index) {
     .filter(Boolean)
     .map(resolveImagePath);
 
+  const discountRaw = (row.discount || '').toLowerCase().trim();
+  const isDiscounted = ['true', 'yes', '1'].includes(discountRaw);
+  const discountPercent = parseInt((row['discount%'] || '').replace(/[^0-9]/g, ''), 10);
+
   return {
     id: `${slugify(row.title)}-${index}`,
     title: row.title.trim(),
@@ -86,7 +91,8 @@ function normalizePainting(row, index) {
     src: image,
     images: [image, ...extraImages].filter(Boolean),
     alt: row.alttext || row.alt || row.title,
-    featured: ['true', 'yes', '1'].includes(featuredRaw)
+    featured: ['true', 'yes', '1'].includes(featuredRaw),
+    discount: isDiscounted ? { percentOff: Number.isNaN(discountPercent) ? null : discountPercent } : null
   };
 }
 
@@ -327,6 +333,32 @@ function initGallery(lightbox) {
 }
 
 /* --------------------------------------------------------------------
+   Discounts
+   -------------------------------------------------------------------- */
+function initDiscountsGrid(lightbox) {
+  const grid = document.getElementById('discounts-grid');
+  if (!grid) return;
+
+  const discounted = PAINTINGS.filter((p) => p.discount);
+
+  if (!discounted.length) {
+    grid.innerHTML = '<p class="data-error">No discounted paintings right now — check back soon!</p>';
+    return;
+  }
+
+  grid.innerHTML = discounted.map((p) => renderCard(p)).join('');
+
+  if (!lightbox) return;
+  grid.querySelectorAll('.art-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const id = card.getAttribute('data-id');
+      const index = discounted.findIndex((p) => p.id === id);
+      lightbox.open(discounted, index);
+    });
+  });
+}
+
+/* --------------------------------------------------------------------
    Lightbox — shared by the Home "Featured Works" grid and the full Gallery.
    Each grid opens it with its own list of paintings, so Next/Prev cycles
    through whichever list (featured, or the current gallery filter) the
@@ -368,8 +400,11 @@ function createLightbox() {
     renderThumbs(painting);
     showImage(painting, currentImageIndex);
     captionTitle.textContent = painting.title;
-    captionMeta.textContent =
-      `${painting.medium} · ${painting.dimensions} · ${painting.year} · ${capitalize(painting.status)}`;
+    let meta = `${painting.medium} · ${painting.dimensions} · ${painting.year} · ${capitalize(painting.status)}`;
+    if (painting.discount) {
+      meta += ` · ${painting.discount.percentOff ? `${painting.discount.percentOff}% Off` : 'On Sale'}`;
+    }
+    captionMeta.textContent = meta;
   }
 
   function showImage(painting, imageIndex) {
@@ -449,6 +484,7 @@ function renderCard(p) {
   return `
     <div class="art-card" data-id="${p.id}" data-category="${p.category}">
       <span class="status-badge">${capitalize(p.status)}</span>
+      ${p.discount ? `<span class="discount-badge">${p.discount.percentOff ? `${p.discount.percentOff}% Off` : 'Sale'}</span>` : ''}
       <div class="art-media">
         <img src="${p.src}" alt="${p.alt}" loading="lazy" width="600" height="750">
       </div>
