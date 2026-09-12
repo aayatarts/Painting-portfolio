@@ -1,0 +1,112 @@
+images/paintings/abstract-pigion.jpg - Silent Watch at Dusk
+images/paintings/al-aqsa-bushes.jpeg - Glimpse of the Sacred
+images/paintings/al-aqsa-sunset.jpg - Fire Over the Holy City
+images/paintings/al-aqsa.jpg - What Remains, What Rises
+images/paintings/alien-world-sky.jpg - Beneath a Foreign Sky
+images/paintings/allahu-akbar-calligraphy.jpg - Whispers in Gold
+images/paintings/allahu-akbar-detail-1.jpg - Whispers in Gold - Study
+images/paintings/allahu-akbar-detail-2.jpg - Whispers in Gold - Fragment
+images/paintings/allahu-akbar-detail-3.jpg - Whispers in Gold - Threshold
+images/paintings/alpine-farm.jpeg - Valley of Quiet Mornings
+images/paintings/alpine-village.jpg - Hollow of Green Silence
+images/paintings/ant-on-a-leaf.jpg - Small World, Vast Journey
+images/paintings/aurora-cave.jpg - Tunnel of Frozen Light
+images/paintings/aurora-hut.jpeg - Cabin Beneath the Green Fire
+images/paintings/aurora.jpg - Alone Under Waking Sky
+images/paintings/autumn-leaves-on-the-branch.jpg - Season's Last Ember
+images/paintings/bird-in-the-garden-cage.jpg - Freedom Within Reach
+images/paintings/birds-flying.jpg - Chorus of Wings at Dusk
+images/paintings/black-pearl.jpg - Ghost Ship of Memory
+images/paintings/blue-anemones-diptych.jpg - Bloom in Monochrome
+images/paintings/blue-beach-stones.jpg - Moonlit Coastal Reverie
+images/paintings/blueish-home.jpg - House of Blue Silence
+images/paintings/bon-fire.jpeg - Flames Reaching Skyward
+images/paintings/bridge-over-the-river.jpg - Steel Bones Over Still Water
+images/paintings/broken-glass.jpeg - Shattered Toast
+images/paintings/butterfly.jpg - Wings of Borrowed Sky
+images/paintings/cactus-silholette.jpeg - Desert's Burning Hour
+images/paintings/char-minar-detailed.webp - Stone Against a Quiet Sky - Study
+images/paintings/char-minar-water-color.jpg - Monument Dissolving into Color
+images/paintings/charminaar-water-color-realistic.jpg - Stone Against a Quiet Sky
+images/paintings/cherry-blossom-fit.jpeg - Bloom's Quiet Reach
+images/paintings/cherry-blossom.jpeg - Petals in Repose
+images/paintings/chess-pawns-and-shadow.jpg - Small Pieces, Long Shadows
+images/paintings/chess.jpg - The Weight They Cast
+images/paintings/closeup-cherryblossoms.jpg - Bloom's Quiet Reach - Study
+images/paintings/colored-glass-bottles.jpg - Bottled Light
+images/paintings/cotton-flower.jpg - Wishes at Dusk
+images/paintings/cresent-moon-pink-sky.jpeg - Thorns Under a Sliver
+images/paintings/cresent-moon.jpeg - Hush Before Dawn
+images/paintings/cup-of-strawberry.jpeg - Harvest's Sweet Abundance
+images/paintings/dark-ryder.jpg - Rider of the Storm
+images/paintings/day-and-night-tree.jpg - One Root, Two Skies
+images/paintings/day-and-night.jpg - One Root, Two Skies - Study
+images/paintings/emerald-leaves.jpg - After the Rain
+images/paintings/empty-letter.jpg - Words Unwritten
+images/paintings/flags-of-palestine.jpg - Unbowed Beneath Smoke
+images/paintings/floral-shadow.jpeg - She Wears the Garden
+images/paintings/floral-vase.jpeg - Gathered from Wildness
+images/paintings/flower-in-dry-soil.jpg - Grace Against the Drought
+images/paintings/flower-reflection.jpg - Mirrored Solitude
+images/paintings/flowers-close-up.jpg - Bloom in the Downpour
+images/paintings/flowers-in-pages.jpg - Roses Between the Lines
+images/paintings/full-moon-night-sky.jpg - Cradled by Clouds
+images/paintings/giza.jpeg - Caravan Under Amber Moon
+images/paintings/golden-leaf-in-the-brook.jpg - Last Gold, Drifting
+images/paintings/green-sancturay-indoors.jpg - Stillness Beyond the Glass
+images/paintings/hands-raised-at-the-kaaba.jpg - Reaching Toward Grace
+images/paintings/japanses-abstract.jpg - Blessings Bloom Wild
+images/paintings/jelly-fish.jpg - Drifting Ember Soul
+images/paintings/kaaba.jpg - House of Surrender
+images/paintings/kerosene-lamp.jpeg - Small Flame, Vast Warmth
+images/paintings/lamp.jpeg - Keeper of Quiet Hours
+images/paintings/lantern-on-old-books.jpg - Wisdom Kept Burning
+images/paintings/lonely-sunset.jpeg - Where Silence Walks
+images/paintings/madina-night.jpeg - Moonlit Devotion
+images/paintings/madina-verse.jpeg - A Promise Fulfilled
+images/paintings/madina.jpg - Dawn Over the Sacred Dome
+images/paintings/mapel-leaf.jpg - Held by a Thread
+images/paintings/masjid-nabawi-sunset.jpg - Light Between Two Worlds
+images/paintings/match-stick-on-fire.jpeg - Fleeting Spark, Rising Smoke
+images/paintings/moon-and-tree.jpg - Roots Under a Golden Eye
+images/paintings/moon-benc-and-lake.jpg - Bench for a Wandering Mind
+images/paintings/moon-dry-tree-branches-seolette.jpg - Bent but Unbroken
+images/paintings/moon-grass-seolette.jpg - Whispers in the Reeds
+images/paintings/mosque-umbrella-abstract.jpg - Shelter Under a Crimson Sky
+images/paintings/night-town.jpeg - Sparks Beneath the Stars
+images/paintings/northern-lights-by-the-stream.jpg - Standing in Wonder
+images/paintings/ornate-frame-study.jpg - Waiting to Be Filled
+images/paintings/palestine-in-red.jpg - Wound That Will Not Heal
+images/paintings/palm-shadow-in-the-pool.jpg - Ripples of a Passing Thing
+images/paintings/paper-boat.jpg - Fragile Vessel, Endless Journey
+images/paintings/peacock-feather.jpeg - Eye of Vanity
+images/paintings/personal-journal-page.jpg - Bloom Between the Lines
+images/paintings/pink-flower-upside-down.jpeg - Grace in Surrender
+images/paintings/pink-rose.jpeg - Tears of Devotion
+images/paintings/rain-on-the-window.jpg - Autumn Through Tears
+images/paintings/raindrops-on-leaves.jpg - Emerald Breath After Rain
+images/paintings/ramadan-mubarak.jpg - A Blessed Beginning
+images/paintings/red-rose-colorless-bg.jpeg - Color Finds a Way
+images/paintings/roses-and-a-prayer.jpg - Sufficient Is My Trust
+images/paintings/ship-sails-blue.jpg - Wind Carries Faith
+images/paintings/silver-teapot-pouring.jpg - Silence Poured Out
+images/paintings/single-red-rose.jpg - Bloom Against the Grain
+images/paintings/small-flowers.jpg - Whispers in the Meadow
+images/paintings/snowy-path-to-the-lone-tree.jpg - Footprints Toward Solitude
+images/paintings/starry-night.jpg - Village Dreaming Beneath Chaos
+images/paintings/sunset-beach.jpeg - Tide of Quiet Endings
+images/paintings/sunset-over-the-hills.jpg - Ember at Day's Edge
+images/paintings/sword-and-shield.jpg - Rest Before the Storm
+images/paintings/taj-mahal.jpeg - Marble Vow of Love
+images/paintings/tall-ship-at-sea.jpg - Sails Against Uncertainty
+images/paintings/tree-of-light.jpg - Roots That Reach for Fire
+images/paintings/tropical-waters.jpg - Fronds Adrift in Blue
+images/paintings/two-candles.jpg - Two Flames, One Dark
+images/paintings/ubrella-rain.jpg - Sheltered in the Downpour
+images/paintings/warm-sky-siolettle-branches.jpg - Perched Between Dusk and Home
+images/paintings/water-jugg-powring.jpg - Grace in the Falling
+images/paintings/wet-umbrella-in-rain.jpeg - Sheltered in the Downpour - Study
+images/paintings/white-and-gold-tulips.jpg - Petals Touched with Gold
+images/paintings/woman-in-garden-water-color.jpg - Turning Toward the Roses
+images/paintings/woven-shadows-abstract-detail.jpg - Woven Shadows - Study
+images/paintings/woven-shadows-abstract.jpg - Woven Shadows
