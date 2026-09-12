@@ -495,6 +495,14 @@ input, textarea {
   font-size: 0.9rem;
 }
 
+.lightbox-caption .art-description {
+  max-width: 560px;
+  margin: 0.75rem auto 0;
+  color: #cfcdc4;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next {

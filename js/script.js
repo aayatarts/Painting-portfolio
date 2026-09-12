@@ -91,6 +91,7 @@ function normalizePainting(row, index) {
     src: image,
     images: [image, ...extraImages].filter(Boolean),
     alt: row.alttext || row.alt || row.title,
+    description: row.description || '',
     featured: ['true', 'yes', '1'].includes(featuredRaw),
     discount: isDiscounted ? { percentOff: Number.isNaN(discountPercent) ? null : discountPercent } : null
   };
@@ -372,6 +373,7 @@ function createLightbox() {
   const thumbsContainer = lightbox.querySelector('.lightbox-thumbs');
   const captionTitle = lightbox.querySelector('.lightbox-caption h3');
   const captionMeta = lightbox.querySelector('.lightbox-caption .art-meta');
+  const captionDescription = lightbox.querySelector('.lightbox-caption .art-description');
   const closeBtn = lightbox.querySelector('.lightbox-close');
   const prevBtn = lightbox.querySelector('.lightbox-prev');
   const nextBtn = lightbox.querySelector('.lightbox-next');
@@ -405,6 +407,7 @@ function createLightbox() {
       meta += ` · ${painting.discount.percentOff ? `${painting.discount.percentOff}% Off` : 'On Sale'}`;
     }
     captionMeta.textContent = meta;
+    captionDescription.textContent = painting.description;
   }
 
   function showImage(painting, imageIndex) {
