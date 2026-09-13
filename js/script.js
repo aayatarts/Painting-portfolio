@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initFeaturedGrid(lightbox);
     initGallery(lightbox);
     initDiscountsGrid(lightbox);
+    initHomeDiscountCTA();
   }
 
   if (artist) {
@@ -357,6 +358,16 @@ function initDiscountsGrid(lightbox) {
       lightbox.open(discounted, index);
     });
   });
+}
+
+/* Home page: the discount banner links straight to discounts.html, so it
+   only needs to hide itself when no painting currently has Discount = TRUE. */
+function initHomeDiscountCTA() {
+  const cta = document.getElementById('discount-cta');
+  if (!cta) return;
+  if (!PAINTINGS.some((p) => p.discount)) {
+    cta.hidden = true;
+  }
 }
 
 /* --------------------------------------------------------------------

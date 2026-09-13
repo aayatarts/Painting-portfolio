@@ -137,6 +137,28 @@ input, textarea {
   border-color: var(--color-accent-dark);
 }
 
+/* ---------- Hero action buttons ---------- */
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-discount {
+  background-color: #2e6b3e;
+  color: var(--color-white);
+  border-color: #2e6b3e;
+  font-weight: 600;
+}
+
+.btn-discount:hover,
+.btn-discount:focus-visible {
+  background-color: #234f2c;
+  border-color: #234f2c;
+  color: var(--color-white);
+}
+
 /* ---------- Navigation ---------- */
 .site-header {
   position: sticky;
@@ -266,6 +288,17 @@ input, textarea {
   color: var(--color-text);
 }
 
+.hero .btn-discount {
+  border-color: #2e6b3e;
+  color: var(--color-white);
+}
+
+.hero .btn-discount:hover {
+  background-color: #234f2c;
+  border-color: #234f2c;
+  color: var(--color-white);
+}
+
 /* ---------- Intro ---------- */
 .intro {
   max-width: 700px;
@@ -341,7 +374,7 @@ input, textarea {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background-color: #b5473d;
+  background-color: #2e6b3e;
   color: var(--color-white);
   font-size: 0.7rem;
   text-transform: uppercase;
