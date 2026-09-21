@@ -1,1 +1,6 @@
 *paintings-upscaled/
+*.mp4
+tools/video_upscaler/input
+tools/video_upscaler/output
+tools/video_upscaler/tmp
+
