@@ -40,6 +40,7 @@
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="discounts.html">Discounts</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -53,7 +54,11 @@
       <div class="hero-content">
         <h1 id="hero-name">Jane Alder</h1>
         <p id="hero-tagline">Nature Rendered in Oil &mdash; Original Paintings by Jane Alder</p>
-        <a href="gallery.html" class="btn">View the Gallery</a>
+        <div class="hero-actions">
+          <a href="gallery.html" class="btn">View the Gallery</a>
+          <!-- Discount call-to-action: hidden by js/script.js if no painting currently has Discount = TRUE -->
+          <a href="discounts.html" class="btn btn-solid btn-discount" id="discount-cta">View Discounted Paintings</a>
+        </div>
       </div>
     </section>
 
@@ -96,6 +101,7 @@
       <div class="lightbox-caption">
         <h3></h3>
         <p class="art-meta"></p>
+        <p class="art-description"></p>
       </div>
     </div>
   </div>

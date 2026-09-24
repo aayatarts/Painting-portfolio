@@ -9,7 +9,11 @@
       "Bash(awk -F',' 'NF!=10 {print NR\": \"NF\" fields: \"$0}' data/paintings.csv)",
       "Bash(awk -F',' 'NF!=10 {print NR\": \"NF\" fields\"}' data/paintings.csv)",
       "Bash(git -C \"c:\\\\Users\\\\yasir\\\\OneDrive\\\\Documents\\\\python_codes\\\\paintings-portfolio\" log --oneline -20)",
-      "Bash(git -C \"c:\\\\Users\\\\yasir\\\\OneDrive\\\\Documents\\\\python_codes\\\\paintings-portfolio\" diff --stat)"
+      "Bash(git -C \"c:\\\\Users\\\\yasir\\\\OneDrive\\\\Documents\\\\python_codes\\\\paintings-portfolio\" diff --stat)",
+      "PowerShell(node -v 2>$null)",
+      "Read(//c/Users/yasir/AppData/Local/Temp/claude/bundled-skills/**)",
+      "Read(//c//**)",
+      "Read(//c/Users/yasir/AppData/Local/Temp/claude/**)"
     ]
   }
 }

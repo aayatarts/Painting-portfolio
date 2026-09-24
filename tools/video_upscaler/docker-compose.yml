@@ -1,0 +1,10 @@
+services:
+  video-enhancer:
+    build: .
+    container_name: video-enhancer
+    env_file:
+      - .env
+    volumes:
+      - ./input:/input:ro
+      - ./output:/output
+      - ./tmp:/tmp/vidstab
