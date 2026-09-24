@@ -466,15 +466,18 @@ body.scrolled .navbar {
 .hero-scroll {
   position: absolute;
   z-index: 2;
-  left: 50%;
+  left: 0;
+  right: 0;
   bottom: 2rem;
-  transform: translateX(-50%);
+  width: max-content;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.9rem;
   font-size: 0.62rem;
   letter-spacing: 0.32em;
+  text-indent: 0.32em; /* balances the trailing letter-spacing so the word sits on centre */
   text-transform: uppercase;
   color: rgba(246, 243, 238, 0.75);
   animation: rise 1.3s 1.4s var(--ease) both;
@@ -768,6 +771,10 @@ body.scrolled .navbar {
   scrollbar-width: none;
 }
 
+.lightbox-inner > * {
+  flex-shrink: 0; /* never squash the image, thumbnails or caption; scroll instead */
+}
+
 .lightbox-inner::-webkit-scrollbar {
   display: none;
 }
@@ -915,6 +922,11 @@ body.scrolled .navbar {
 
 @media (max-width: 640px) {
   .lightbox-inner { padding: 3.5rem 0 0; }
+  .lightbox-image-wrap { max-height: none; }
+  /* Leave room below a tall painting for its extra-photo thumbnails */
+  .lightbox-image-wrap img { max-height: 58vh; }
+  .lightbox-inner:has(.lightbox-thumb) .lightbox-image-wrap img { max-height: 50vh; }
+  .lightbox-thumb { width: 52px; height: 52px; }
   .lightbox-prev,
   .lightbox-next {
     top: auto;
