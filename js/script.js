@@ -25,6 +25,8 @@ let PAINTINGS = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
   initNav();
+  initHeaderScroll();
+  initReveal(document.querySelectorAll('.intro, .section-head, .view-all-wrap, .about-photo, .about-text, .contact-info-list, .contact-form, .filter-bar'));
   initFooterYear();
   initContactForm();
 
@@ -256,14 +258,67 @@ function initNav() {
   toggle.addEventListener('click', () => {
     toggle.classList.toggle('open');
     links.classList.toggle('open');
+    document.body.classList.toggle('menu-open', links.classList.contains('open'));
   });
 
   links.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       toggle.classList.remove('open');
       links.classList.remove('open');
+      document.body.classList.remove('menu-open');
     });
   });
+}
+
+/* Header turns solid once the page is scrolled; on the home page the hero
+   painting also drifts slightly slower than the page (parallax). */
+function initHeaderScroll() {
+  const heroBg = document.getElementById('hero-bg');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let ticking = false;
+
+  function update() {
+    const y = window.scrollY;
+    document.body.classList.toggle('scrolled', y > 40);
+    if (heroBg && !reduceMotion && y < window.innerHeight * 1.2) {
+      heroBg.style.setProperty('--parallax', `${Math.round(y * 0.3)}px`);
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+  update();
+}
+
+/* Fade elements up as they scroll into view. Cards in the same row get a
+   small stagger so a grid settles in like a hang being revealed. */
+const revealObserver = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 })
+  : null;
+
+function initReveal(elements, stagger = 0) {
+  if (!revealObserver) return;
+  elements.forEach((el, i) => {
+    el.classList.add('reveal');
+    if (stagger) el.style.transitionDelay = `${(i % 4) * stagger}ms`;
+    revealObserver.observe(el);
+  });
+}
+
+function revealCards(grid) {
+  initReveal(grid.querySelectorAll('.art-card'), 90);
 }
 
 function initFooterYear() {
@@ -280,6 +335,7 @@ function initFeaturedGrid(lightbox) {
 
   const featured = PAINTINGS.filter((p) => p.featured);
   grid.innerHTML = featured.map((p) => renderCard(p)).join('');
+  revealCards(grid);
 
   if (!lightbox) return;
   grid.querySelectorAll('.art-card').forEach((card) => {
@@ -308,6 +364,7 @@ function initGallery(lightbox) {
       ? PAINTINGS.slice()
       : PAINTINGS.filter((p) => p.category === activeFilter);
     grid.innerHTML = currentList.map((p) => renderCard(p)).join('');
+    revealCards(grid);
     attachCardClicks();
   }
 
@@ -349,6 +406,7 @@ function initDiscountsGrid(lightbox) {
   }
 
   grid.innerHTML = discounted.map((p) => renderCard(p)).join('');
+  revealCards(grid);
 
   if (!lightbox) return;
   grid.querySelectorAll('.art-card').forEach((card) => {
@@ -413,11 +471,12 @@ function createLightbox() {
     renderThumbs(painting);
     showImage(painting, currentImageIndex);
     captionTitle.textContent = painting.title;
-    let meta = `${painting.medium} · ${painting.dimensions} · ${painting.year} · ${capitalize(painting.status)}`;
-    if (painting.discount) {
-      meta += ` · ${painting.discount.percentOff ? `${painting.discount.percentOff}% Off` : 'On Sale'}`;
-    }
-    captionMeta.textContent = meta;
+    const discountLabel = painting.discount
+      ? (painting.discount.percentOff ? `${painting.discount.percentOff}% Off` : 'On Sale')
+      : '';
+    captionMeta.textContent = [painting.medium, painting.dimensions, painting.year, capitalize(painting.status), discountLabel]
+      .filter(Boolean)
+      .join(' · ');
     captionDescription.textContent = painting.description;
   }
 
@@ -426,6 +485,9 @@ function createLightbox() {
     const images = painting.images && painting.images.length ? painting.images : [painting.src];
     lightboxImg.src = images[imageIndex] || images[0];
     lightboxImg.alt = painting.alt;
+    lightboxImg.classList.remove('is-changing');
+    void lightboxImg.offsetWidth; // restart the fade-in animation
+    lightboxImg.classList.add('is-changing');
     thumbsContainer.querySelectorAll('.lightbox-thumb').forEach((thumb, i) => {
       thumb.classList.toggle('active', i === imageIndex);
     });
@@ -497,14 +559,14 @@ function createLightbox() {
 function renderCard(p) {
   return `
     <div class="art-card" data-id="${p.id}" data-category="${p.category}">
-      <span class="status-badge">${capitalize(p.status)}</span>
+      <span class="status-badge status-${p.status}">${capitalize(p.status)}</span>
       ${p.discount ? `<span class="discount-badge">${p.discount.percentOff ? `${p.discount.percentOff}% Off` : 'Sale'}</span>` : ''}
       <div class="art-media">
         <img src="${p.src}" alt="${p.alt}" loading="lazy" width="600" height="750">
       </div>
       <div class="art-info">
         <h3>${p.title}</h3>
-        <p class="art-meta">${capitalize(p.category)} · ${p.year}</p>
+        <p class="art-meta">${[capitalize(p.category), p.year].filter(Boolean).join(' · ')}</p>
       </div>
     </div>
   `;
