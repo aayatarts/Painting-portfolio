@@ -519,7 +519,7 @@ body.scrolled .navbar {
 /* ---------- Featured / Gallery Grid ---------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
   column-gap: var(--gap);
   row-gap: clamp(3rem, 5vw, 4.5rem);
 }
@@ -537,7 +537,8 @@ body.scrolled .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 11%;
+  /* extra room on top keeps the status label clear of tall paintings */
+  padding: 2.75rem 7% 7%;
   background-color: var(--color-matte);
   overflow: hidden;
   transition: background-color 0.6s var(--ease);
@@ -1388,7 +1389,7 @@ body.scrolled .navbar {
   }
 
   .art-card .art-media {
-    padding: 9%;
+    padding: 2.5rem 6% 6%;
   }
 
   .art-card .art-media::after {
@@ -1398,42 +1399,8 @@ body.scrolled .navbar {
 
 @media (max-width: 560px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 0.9rem;
-    row-gap: 2.25rem;
-  }
-
-  .art-card .art-media {
-    padding: 14% 10% 10%;
-  }
-
-  .art-card .art-info {
-    padding-top: 0.8rem;
-    gap: 0.2rem;
-  }
-
-  .art-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .art-card .art-meta {
-    font-size: 0.56rem;
-    letter-spacing: 0.16em;
-  }
-
-  .art-card .status-badge {
-    top: 0.55rem;
-    right: 0.6rem;
-    font-size: 0.5rem;
-    letter-spacing: 0.16em;
-    gap: 0.35rem;
-  }
-
-  .art-card .discount-badge {
-    top: 0.45rem;
-    left: 0.45rem;
-    font-size: 0.5rem;
-    padding: 0.3rem 0.5rem;
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
   }
 
   .filter-bar {
